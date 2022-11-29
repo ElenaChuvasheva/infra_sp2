@@ -23,11 +23,11 @@ cd infra_sp2/infra/
 ```
 docker-compose up
 ```
-В новом окне консоли перейдите в ту же папку, соберите статику, создайте базу данных и суперюзера:
+В новом окне консоли перейдите в ту же папку, создайте базу данных и суперюзера, соберите статику:
 ```
-docker-compose exec web python manage.py collectstatic --no-input
 docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
+docker-compose exec web python manage.py collectstatic --no-input
 ```
 Узнайте имя или ID контейнера web:
 ```
