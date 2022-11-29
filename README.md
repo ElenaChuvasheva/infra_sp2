@@ -41,3 +41,4 @@ docker cp fixtures.json <имя или ID контейнера web>:/app/
 ```
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
+Зайдите в админку сайта http://localhost/admin/ с указанными ранее логином и паролем для суперюзера.
