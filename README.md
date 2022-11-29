@@ -23,8 +23,8 @@ cd infra_sp2/infra/
 ```
 docker-compose up
 ```
-Создайте и заполните базу данных:
+В новом окне консоли перейдите в ту же папку, создайте и заполните базу данных:
 ```
 docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py loaddata dump.json
+docker-compose exec web python manage.py loaddata fixtures.json
 ```
