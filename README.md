@@ -23,8 +23,21 @@ cd infra_sp2/infra/
 ```
 docker-compose up
 ```
-В новом окне консоли перейдите в ту же папку, создайте и заполните базу данных:
+В новом окне консоли перейдите в ту же папку, соберите статику, создайте базу данных и суперюзера:
 ```
+docker-compose exec web python manage.py collectstatic --no-input
 docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py createsuperuser
+```
+Узнайте имя или ID контейнера web:
+```
+docker container ls
+```
+Положите файл с тестовыми данными для базы в контейнер:
+```
+docker cp fixtures.json <имя или ID контейнера web>:/app/
+```
+Выгрузите данные из fixtures.json в базу данных:
+```
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
