@@ -20,7 +20,6 @@ INSTALLED_APPS = [
     'reviews',
     'users',
     'api',
-    'filldb',
     'rest_framework',
     'django_filters'
 ]
